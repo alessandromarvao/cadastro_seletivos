@@ -1,0 +1,18 @@
+{
+    "name": "alessandromarvao/cadastro_seletivos",
+    "description": "Utilizando Composer na aplicação",
+    "authors": [
+        {
+            "name": "Alessandro Marvão",
+            "email": "alessandromarvao@gmail.com"
+        }
+    ],
+    "autoload" : {
+        "psr-4" : {
+            "Model\\" : "model/",
+            "Controller\\" : "controller/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {}
+}
