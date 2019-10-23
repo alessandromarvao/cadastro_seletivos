@@ -14,7 +14,7 @@ switch($_SERVER['REQUEST_URI']){
                 die("O redirecionamento falhou. Por favor, clique neste link: <a href=...>");
             }
             else{
-                // exit(header("Location: index.php"));
+                exit(header("Location: index.php"));
             }
         }
 }
@@ -34,6 +34,8 @@ switch($_SERVER['REQUEST_URI']){
     <link rel="stylesheet" href="https://barreirinhas.ifma.edu.br/wp-content/themes/portalgov/css/font-awesome.min.css" type="text/css">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,800,700" rel="stylesheet" type="text/css">
+
+    <link href="https://barreirinhas.ifma.edu.br/wp-content/themes/portalgov/img/icons/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
 </head>
 <body>
 <header class="">			
