@@ -14,7 +14,7 @@ switch($_SERVER['REQUEST_URI']){
                 die("O redirecionamento falhou. Por favor, clique neste link: <a href=...>");
             }
             else{
-                exit(header("Location: index.php"));
+                // exit(header("Location: index.php"));
             }
         }
 }
