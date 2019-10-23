@@ -28,7 +28,7 @@ ENGINE = InnoDB;
 -- Table `db_seletivo`.`bancos`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `db_seletivo`.`bancos` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `banco` VARCHAR(45) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
@@ -38,7 +38,7 @@ ENGINE = InnoDB;
 -- Table `db_seletivo`.`contas`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `db_seletivo`.`contas` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `id_bancos` INT NOT NULL,
   `agencia` VARCHAR(45) NULL,
   `conta` VARCHAR(45) NULL,
@@ -58,7 +58,7 @@ ENGINE = InnoDB;
 -- Table `db_seletivo`.`enderecos`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `db_seletivo`.`enderecos` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `endereco` VARCHAR(100) NULL,
   `bairro` VARCHAR(45) NULL,
   `cep` VARCHAR(45) NULL,
@@ -72,7 +72,7 @@ ENGINE = InnoDB;
 -- Table `db_seletivo`.`fiscais`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `db_seletivo`.`fiscais` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `id_esccolas` INT NOT NULL,
   `contas_id` INT NOT NULL,
   `enderecos_id` INT NOT NULL,

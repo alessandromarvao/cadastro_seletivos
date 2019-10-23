@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+include_once "bootstrap.php";
+
 use Controller\Classes\SessionController;
 
 switch($_SERVER['REQUEST_URI']){
@@ -8,13 +10,15 @@ switch($_SERVER['REQUEST_URI']){
     break;
     case '/index.php':
     break;
+    case 'visitante.php';
+    break;
     default:
         if (empty(SessionController::get('user'))){
             if (headers_sent()) {
-                die("O redirecionamento falhou. Por favor, clique neste link: <a href=...>");
+                die("O redirecionamento falhou. Por favor, clique neste link: <a href='index.php'>");
             }
             else{
-                exit(header("Location: index.php"));
+                // exit(header("Location: index.php"));
             }
         }
 }
