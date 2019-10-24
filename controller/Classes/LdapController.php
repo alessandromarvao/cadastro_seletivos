@@ -9,7 +9,7 @@ class LDAPController
     private $ldapBind;
 
     function __construct(){
-        $this->conn = ldap_connect(LDAP_SERVER, LDAP_PORT) or die ("Sem conexão com o servidor de domínio");
+        $this->conn = \ldap_connect(LDAP_SERVER, LDAP_PORT) or die ("Sem conexão com o servidor de domínio");
     }
 
     /**

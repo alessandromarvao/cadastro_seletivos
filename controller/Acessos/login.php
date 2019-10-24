@@ -2,7 +2,7 @@
 session_start();
 include_once "../../bootstrap.php";
 
-use Controller\Classes\LDAPController;
+use Controller\Classes\LdapController;
 use Controller\Classes\SessionController;
 Use Model\Bancos;
 Use Model\Escolas;
