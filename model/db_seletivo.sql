@@ -73,9 +73,9 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `db_seletivo`.`fiscais` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `id_esccolas` INT NOT NULL,
-  `contas_id` INT NOT NULL,
-  `enderecos_id` INT NOT NULL,
+  `id_escolas` INT NOT NULL,
+  `id_contas` INT NOT NULL,
+  `id_enderecos` INT NOT NULL,
   `cpf` VARCHAR(45) NOT NULL,
   `matricula` VARCHAR(45) NULL,
   `nome` VARCHAR(45) NULL,
@@ -86,21 +86,21 @@ CREATE TABLE IF NOT EXISTS `db_seletivo`.`fiscais` (
   `email` VARCHAR(45) NULL,
   `created_at` DATETIME NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_fiscais_escolas_idx` (`id_esccolas` ASC),
-  INDEX `fk_fiscais_contas1_idx` (`contas_id` ASC),
-  INDEX `fk_fiscais_enderecos1_idx` (`enderecos_id` ASC),
+  INDEX `fk_fiscais_escolas_idx` (`id_escolas` ASC),
+  INDEX `fk_fiscais_contas1_idx` (`id_contas` ASC),
+  INDEX `fk_fiscais_enderecos1_idx` (`id_enderecos` ASC),
   CONSTRAINT `fk_fiscais_escolas`
-    FOREIGN KEY (`id_esccolas`)
+    FOREIGN KEY (`id_escolas`)
     REFERENCES `db_seletivo`.`escolas` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_fiscais_contas1`
-    FOREIGN KEY (`contas_id`)
+    FOREIGN KEY (`id_contas`)
     REFERENCES `db_seletivo`.`contas` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_fiscais_enderecos1`
-    FOREIGN KEY (`enderecos_id`)
+    FOREIGN KEY (`id_enderecos`)
     REFERENCES `db_seletivo`.`enderecos` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)

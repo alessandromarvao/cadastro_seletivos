@@ -20,8 +20,13 @@ echo "\n";
                 <label for="inputSenha"><h2>Senha:</h2></label>
                 <input type="password" name="inputSenha" class="form-control" id="inputSenha" placeholder="Digite sua senha de acesso ao SUAP">
             </div>
+            <?php
+            if(isset($_GET['m'])){
+                echo "<div class='alert alert-danger'>Usuário ou senha incorreto</div>";
+            }
+            ?>
+            <br>
             <button type="submit" class="btn btn-success btn-large">Enviar</button>
-            
         </form>
         <div class="form-right">
             <br>

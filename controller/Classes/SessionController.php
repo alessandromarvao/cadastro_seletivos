@@ -4,14 +4,6 @@ namespace Controller\Classes;
 
 class SessionController
 {
-    public static function init(){
-        if(empty(session_id())) {
-            session_start();
-        }
-        
-        return TRUE;
-    }
-
     public static function setUser($user, $cpf, $nome, $email, $nascimento){
         $_SESSION['user'] = $user;
         $_SESSION['cpf'] = $cpf;
@@ -31,8 +23,7 @@ class SessionController
             return $_SESSION[$param];
         } else {
             return NULL;
-        }
-        
+        }        
     }
 
     public static function checkLogin(){

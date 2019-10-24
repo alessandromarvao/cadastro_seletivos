@@ -1,5 +1,6 @@
 /env.php
 /vendor/
-/*.mwb.bak
-/*.mwb
+*.mwb.bak
+*.mwb
 /lixo.php
+/lixos.php

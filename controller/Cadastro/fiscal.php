@@ -1,10 +1,9 @@
 <?php
+include_once "../../bootstrap.php";
 
 use Model\Conexao;
-Use Model\Bancos;
 Use Model\Contas;
 Use Model\Enderecos;
-Use Model\Escolas;
 Use Model\Fiscais;
 
 $matricula = $_REQUEST['inputUsuario'];
@@ -28,9 +27,30 @@ $uf = $_REQUEST['inputUF'];
 $municipio = $_REQUEST['inputMunicipio'];
 $email = $_REQUEST['inputEmail'];
 
+/*
 try {
+    $conexao = new Conexao();
+    $conexao->beginTransaction();
+
+    //Cadastra a conta do usuário
     Contas::create($banco, $ag, $conta, $tipo_conta, $op);
+    //Cadastra o endereço do usuário
     Enderecos::create($endereco, $bairro, $cep, $uf, $municipio);
+    
+    //Recupera o ID da conta
+    $conta = Contas::getLastId();
+    //Recupera o ID do endereço
+    $endereco = Enderecos::getLastId();
+
+    // echo "$escola, $conta, $endereco, $cpf, $matricula, $nome, $rg, $sexo, $orgao, $data_exp, $email";
+    Fiscais::create($escola, $conta, $endereco, $cpf, $matricula, $nome, $rg, $sexo, $orgao, $data_exp, $email);
+    
+    $conexao->commit();
 } catch(Exception $e){
     $conexao->rollback();
 }
+*/
+
+echo "<pre>";
+print_r(Fiscais::read());
+echo "</pre>";

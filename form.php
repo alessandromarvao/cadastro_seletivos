@@ -2,8 +2,9 @@
 include_once "views/default/header.php";
 
 use Controller\Classes\SessionController;
+use Model\Bancos;
+use Model\Escolas;
 
-SessionController::close();
 /*
 *   Cabeçalho da página
 */
@@ -15,7 +16,7 @@ SessionController::close();
     </div>
     <hr />
     <div class="page">
-        <form method="POST" action="controller/Acessos/login.php">
+        <form method="POST" action="controller/Cadastro/fiscal.php">
             <div class="form-group">
                 <label for="inputUsuario"><h2>Matrícula:</h2></label>
                 <input type='text' name='inputUsuario' class='form-control' id='inputUsuario' autocomplete='off' value="<?php echo SessionController::get('user') ?>" autocomplete="off">
@@ -43,7 +44,7 @@ SessionController::close();
             </div>
             <div class="form-group">
                 <label for="inputSexo"><h2>Sexo:</h2></label>
-                <select name="innputSexo" id="inputSexo">
+                <select name="inputSexo" id="inputSexo">
                     <option value="M">Masculino</option>
                     <option value="F">Feminino</option>
                 </select>
@@ -57,6 +58,11 @@ SessionController::close();
             <div class="form-group">
                 <label for="inputBanco">Banco:</label>
                 <select name="inputBanco" id="inputBanco">
+                <?php
+                foreach(SessionController::get('bancos') as $row){
+                    echo "<option value='" . $row['id'] . "'>" . $row['banco'] . "</option>\n";
+                }
+                ?>
                 </select>
             </div>
             <div class="form-group">
@@ -83,9 +89,11 @@ SessionController::close();
             <div class="form-group">
                 <label for="inputPreferencia">Escola de Preferência:</label>
                 <select name="inputPreferencia" id="inputPreferencia">
-                    <option value="IFMA">IFMA - Campus Barreirinhas</option>
-                    <option value="Joaquim">U.I. Joaquim Soeiro de Carvalho</option>
-                    <option value="Rebelo">Escola Benedito Rebelo dos Reis</option>
+                    <?php
+                    foreach(SessionController::get('escolas') as $row){
+                        echo "<option value='" . $row['id'] . "'>" . $row['escola'] . "</option>\n";
+                    }
+                    ?>
                 </select>
             </div>
             <div class="form-group">

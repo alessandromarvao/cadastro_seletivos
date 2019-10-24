@@ -70,7 +70,7 @@ class Contas
         
         $conexao = new Conexao();
 
-        return $conexao->select($query);
+        return $conexao->select($query)[0]['id'];
     }
     
     public function update()

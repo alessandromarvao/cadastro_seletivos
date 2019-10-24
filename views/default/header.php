@@ -6,21 +6,11 @@ include_once "bootstrap.php";
 use Controller\Classes\SessionController;
 
 switch($_SERVER['REQUEST_URI']){
-    case '/':
-    break;
-    case '/index.php':
-    break;
-    case 'visitante.php';
-    break;
-    default:
+    case 'form.php':
         if (empty(SessionController::get('user'))){
-            if (headers_sent()) {
-                die("O redirecionamento falhou. Por favor, clique neste link: <a href='index.php'>");
-            }
-            else{
-                // exit(header("Location: index.php"));
-            }
+            exit(header("Location: index.php"));
         }
+    break;
 }
 ?>
 
