@@ -1,4 +1,12 @@
 <?php
+session_start();
+
+include_once "bootstrap.php";
+
+use Controller\Classes\SessionController;
+
+SessionController::close();
+
 /*
 *   Cabeçalho da página
 */
