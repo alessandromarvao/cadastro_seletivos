@@ -6,7 +6,7 @@ include_once "bootstrap.php";
 use Controller\Classes\SessionController;
 
 switch($_SERVER['REQUEST_URI']){
-    case 'form.php':
+    case '/cadastro_seletivos/form.php':
         if (empty(SessionController::get('user'))){
             exit(header("Location: /cadastro_seletivos/index.php"));
         }

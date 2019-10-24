@@ -84,7 +84,7 @@ use Model\Escolas;
                 <input type="text" name="inputOperacao" id="inputOperacao" class="form-control" placeholder="Ex.: 003" autocomplete="off">
             </div>
             <hr>
-            <h3>Informações sobre localização</h3>
+            <h3>Escola desejada para fiscalização</h3>
             <div class="form-group">
                 <label for="inputPreferencia">Escola de Preferência:</label>
                 <select name="inputPreferencia" id="inputPreferencia">
@@ -95,6 +95,8 @@ use Model\Escolas;
                     ?>
                 </select>
             </div>
+            <hr>
+            <h3>Informações sobre a sua localização</h3>
             <div class="form-group">
                 <label for="inputCEP">CEP:</label>
                 <input type="text" name="inputCEP" id="inputCEP" class="form-control" value="65590-000" autocomplete="off" required>
