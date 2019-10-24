@@ -11,7 +11,7 @@ echo "\n";
     </div>
     <hr />
     <div class="page">
-        <form method="POST" action="controller/Acessos/login.php" class="form-left">
+        <form method="POST" action="/cadastro_seletivos/controller/Acessos/login.php" class="form-left">
             <div class="form-group">
                 <label for="inputUsuario"><h2>Usuário:</h2></label>
                 <input type="text" name="inputUsuario" class="form-control" id="inputUsuario" autocomplete="off" placeholder="Digite sua matrícula do SUAP">
@@ -21,8 +21,19 @@ echo "\n";
                 <input type="password" name="inputSenha" class="form-control" id="inputSenha" placeholder="Digite sua senha de acesso ao SUAP">
             </div>
             <?php
-            if(isset($_GET['m'])){
-                echo "<div class='alert alert-danger'>Usuário ou senha incorreto</div>";
+            $msg = "";
+
+            if(!empty($_GET['m'])){
+                $msg = $_GET['m'];
+            }
+
+            switch($msg){
+                case 'error':
+                    echo "<div class='alert alert-danger'>Usuário ou senha incorreto</div>";
+                    break;
+                case 'success':
+                    echo "<div class='alert alert-success'>Seu cadastro foi realizado com sucesso!</div>";
+                    break;
             }
             ?>
             <br>

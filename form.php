@@ -16,7 +16,7 @@ use Model\Escolas;
     </div>
     <hr />
     <div class="page">
-        <form method="POST" action="controller/Cadastro/fiscal.php">
+        <form method="POST" action="/cadastro_seletivos/controller/Cadastro/fiscal.php">
             <div class="form-group">
                 <label for="inputUsuario"><h2>Matrícula:</h2></label>
                 <input type='text' name='inputUsuario' class='form-control' id='inputUsuario' autocomplete='off' value="<?php echo SessionController::get('user') ?>" autocomplete="off">
@@ -132,6 +132,7 @@ use Model\Escolas;
             </div>
             <br>
             <button type="submit" class="btn btn-success btn-large">Enviar</button>
+            <a href="/cadastro_seletivos/index.php" class="btn btn-warning btn-large">Cancelar</a>
             
         </form>
     </div>

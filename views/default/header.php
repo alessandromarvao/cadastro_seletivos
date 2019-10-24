@@ -8,7 +8,7 @@ use Controller\Classes\SessionController;
 switch($_SERVER['REQUEST_URI']){
     case 'form.php':
         if (empty(SessionController::get('user'))){
-            exit(header("Location: index.php"));
+            exit(header("Location: /cadastro_seletivos/index.php"));
         }
     break;
 }
@@ -21,8 +21,8 @@ switch($_SERVER['REQUEST_URI']){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cadastro de fiscais - Seletivo IFMA 2019</title>
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/cadastro_seletivos/css/app.css">
+    <link rel="stylesheet" href="/cadastro_seletivos/css/style.css">
     <link rel="stylesheet" href="https://barreirinhas.ifma.edu.br/wp-content/themes/portalgov/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="https://barreirinhas.ifma.edu.br/wp-content/themes/portalgov/css/template-verde.css?v=1569005042">
     <link rel="stylesheet" href="https://barreirinhas.ifma.edu.br/wp-content/themes/portalgov/css/font-awesome.min.css" type="text/css">

@@ -1,6 +1,7 @@
 <?php
 include_once "../../bootstrap.php";
 
+use Controller\Classes\SessionController; 
 use Model\Conexao;
 Use Model\Contas;
 Use Model\Enderecos;
@@ -27,7 +28,6 @@ $uf = $_REQUEST['inputUF'];
 $municipio = $_REQUEST['inputMunicipio'];
 $email = $_REQUEST['inputEmail'];
 
-/*
 try {
     $conexao = new Conexao();
     $conexao->beginTransaction();
@@ -43,14 +43,13 @@ try {
     $endereco = Enderecos::getLastId();
 
     // echo "$escola, $conta, $endereco, $cpf, $matricula, $nome, $rg, $sexo, $orgao, $data_exp, $email";
-    Fiscais::create($escola, $conta, $endereco, $cpf, $matricula, $nome, $rg, $sexo, $orgao, $data_exp, $email);
+    if(Fiscais::create($escola, $conta, $endereco, $cpf, $matricula, $nome, $rg, $sexo, $orgao, $data_exp, $email)){
+        SessionController::close();
+        header('Location:/cadastro_seletivos/index.php?m=success');
+    }
     
     $conexao->commit();
+
 } catch(Exception $e){
     $conexao->rollback();
 }
-*/
-
-echo "<pre>";
-print_r(Fiscais::read());
-echo "</pre>";
