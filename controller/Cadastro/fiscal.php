@@ -27,6 +27,10 @@ $bairro = $_REQUEST['inputBairro'];
 $uf = $_REQUEST['inputUF'];
 $municipio = $_REQUEST['inputMunicipio'];
 $email = $_REQUEST['inputEmail'];
+$pis = "";
+if(isset($_REQUEST['inputPIS'])){
+    $pis = $_REQUEST['inputPIS'];
+}
 
 try {
     $conexao = new Conexao();
@@ -43,7 +47,7 @@ try {
     $endereco = Enderecos::getLastId();
 
     // echo "$escola, $conta, $endereco, $cpf, $matricula, $nome, $rg, $sexo, $orgao, $data_exp, $email";
-    if(Fiscais::create($escola, $conta, $endereco, $cpf, $matricula, $nome, $rg, $sexo, $orgao, $data_exp, $email)){
+    if(Fiscais::create($escola, $conta, $endereco, $cpf, $matricula, $nome, $rg, $sexo, $orgao, $data_exp, $email, $pis)){
         SessionController::close();
         header('Location:/cadastro_seletivos/index.php?m=success');
     }

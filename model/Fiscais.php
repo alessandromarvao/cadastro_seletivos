@@ -12,12 +12,12 @@ class Fiscais
      * @param $fiscal Nome da fisca
      * @return BOOLEAN TRUE se o cadastro ocorrer com sucesso ou FALSE se houver falha
      */
-    public static function create($escola, $conta, $endereco, $cpf, $matricula, $nome, $rg, $sexo, $orgao_exp, $data_exped, $email)
+    public static function create($escola, $conta, $endereco, $cpf, $matricula, $nome, $rg, $sexo, $orgao_exp, $data_exped, $email, $pis=NULL)
     {
         date_default_timezone_set('America/Recife');
         $date = DATE('Y-m-d H:i:s');
-        $query = 'INSERT INTO fiscais (id_escolas, id_contas, id_enderecos, cpf, matricula, nome, rg, sexo, orgao_exp, data_exped, email, created_at) ' . 
-        'VALUES (?,?,?,?,?,?,?,?,?,?,?,?)';
+        $query = 'INSERT INTO fiscais (id_escolas, id_contas, id_enderecos, cpf, matricula, nome, rg, sexo, orgao_exp, data_exped, email, created_at, pis) ' . 
+        'VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)';
         $data = [
             0 => [
                 '#' => 1,
@@ -66,6 +66,10 @@ class Fiscais
             11 => [
                 '#' => 12,
                 'value' => $date
+            ],
+            12 => [
+                '#' => 13,
+                'value' => $pis
             ]
         ];
 
