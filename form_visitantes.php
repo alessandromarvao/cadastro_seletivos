@@ -18,16 +18,19 @@ use Model\Escolas;
     <div class="page">
         <form method="POST" action="/cadastro_seletivos/controller/Cadastro/fiscal.php">
             <div class="form-group">
-                <label for="inputUsuario"><h2>Matrícula:</h2></label>
-                <input type='text' name='inputUsuario' class='form-control' id='inputUsuario' autocomplete='off' value="<?php echo SessionController::get('user') ?>" autocomplete="off" required>
+                <input type='hidden' name='inputUsuario' class='form-control' id='inputUsuario' autocomplete='off' value="visitante" autocomplete="off" required>
             </div>
             <div class="form-group">
                 <label for="inputNome"><h2>Nome Completo:</h2></label>
-                <input type="text" name="inputNome" class="form-control" id="inputNome"value="<?php echo SessionController::get('nome')?>" autocomplete="off" required>
+                <input type="text" name="inputNome" class="form-control" id="inputNome" autocomplete="off" required>
             </div>
             <div class="form-group">
                 <label for="inputCPF"><h2>CPF:</h2></label>
-                <input type="text" name="inputCPF" class="form-control" id="inputCPF" value="<?php echo SessionController::get('cpf')?>" autocomplete="off" required>
+                <input type="text" name="inputCPF" class="form-control" id="inputCPF" autocomplete="off" required>
+            </div>
+            <div class="form-group">
+                <label for="inputPIS"><h2>PIS/PASEP/NIT(somente números):</h2></label>
+                <input type="text" name="inputPIS" class="form-control" id="inputPIS" autocomplete="off" required>
             </div>
             <div class="form-group">
                 <label for="inputRG"><h2>R.G.(somente números):</h2></label>
@@ -50,7 +53,7 @@ use Model\Escolas;
             </div>
             <div class="form-group">
                 <label for="inputData"><h2>Data de Nascimento:</h2></label>
-                <input type="date" name="inputData" class="form-control" id="inputData" placeholder="Digite sua senha de acesso ao SUAP" value="<?php echo SessionController::get('nascimento')?>" autocomplete="off" required>
+                <input type="date" name="inputData" class="form-control" id="inputData" placeholder="Digite sua senha de acesso ao SUAP" autocomplete="off" required>
             </div>
             <hr>
             <h3>Dados Bancários <small>(você não pode utilizar contas bancárias de terceiros) </small></h3>
@@ -119,7 +122,7 @@ use Model\Escolas;
             </div>
             <div class="form-group">
                 <label for="inputEmail">E-mail:</label>
-                <input type="text" name="inputEmail" id="inputEmail" class="form-control" placeholder="Digite aqui o seu e-mail corretamente" value="<?php echo SessionController::get('email'); ?>" autocomplete="off">
+                <input type="text" name="inputEmail" id="inputEmail" class="form-control" placeholder="Digite aqui o seu e-mail corretamente" autocomplete="off">
             </div>
             <hr>
             <div class="alert">
