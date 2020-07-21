@@ -1,7 +1,9 @@
 <?php
 namespace Model;
 
-use Model\Conexao;
+include_once '../bootstrap.php';
+
+use Database\Conexao;
 
 // class Escolas extends Conexao
 class Escolas

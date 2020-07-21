@@ -1,9 +1,10 @@
 <?php
 namespace Model;
 
-use Model\Conexao;
+include_once '../bootstrap.php';
 
-// class Fiscais extends Conexao
+use Database\Conexao;
+
 class Fiscais
 {
     /**

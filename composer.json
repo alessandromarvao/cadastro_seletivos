@@ -10,9 +10,12 @@
     "autoload" : {
         "psr-4" : {
             "Model\\" : "model/",
-            "Controller\\" : "controller/"
+            "Controller\\" : "controller/",
+            "Database\\": "database/"
         }
     },
     "minimum-stability": "dev",
-    "require": {}
+    "require": {
+        "vlucas/phpdotenv": "^5.1@dev"
+    }
 }

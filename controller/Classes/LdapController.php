@@ -1,7 +1,7 @@
 <?php
 namespace Controller\Classes;
 
-include_once '../../env.php';
+include_once '../../bootstrap.php';
 
 class LDAPController
 {
@@ -9,7 +9,7 @@ class LDAPController
     private $ldapBind;
 
     function __construct(){
-        $this->conn = \ldap_connect(LDAP_SERVER, LDAP_PORT) or die ("Sem conexão com o servidor de domínio");
+        $this->conn = \ldap_connect($_ENV['LDAP_SERVER'], $_ENV['LDAP_PORT']) or die ("Sem conexão com o servidor de domínio");
     }
 
     /**
@@ -21,7 +21,7 @@ class LDAPController
      */
     public function checkAccess($usr, $pwd){
         // using ldap bind
-        $ldaprdn  = $usr . "@". LDAP_DOMAIN;     // ldap rdn or dn
+        $ldaprdn  = $usr . "@". $_ENV['LDAP_DOMAIN'];     // ldap rdn or dn
         $ldappass = $pwd;  // associated password
         
         // connect to ldap server

@@ -50,7 +50,7 @@ echo "\n";
         <div class="form-right">
             <br>
             <h2>Não possui acesso ao SUAP?</h2>
-            <a href="/cadastro_seletivos/controller/Acessos/login.visitantes.php" class="btn btn-danger">Clique aqui</a>
+            <a href="controller/Acessos/login.visitantes.php" class="btn btn-danger">Clique aqui</a>
         </div>
     </div>
 </div>

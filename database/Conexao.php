@@ -1,8 +1,8 @@
 <?php
 
-namespace Model;
+namespace Database;
 
-include_once '../../env.php';
+include_once "../../bootstrap.php";
 
 /**
  * Esta classe cria a conexão com o Banco de Dados usando o PDO, 
@@ -27,7 +27,7 @@ class Conexao {
      */
     function __construct(){
         try {
-            $this->conn = new \PDO('mysql:host=' . HST . ';dbname=' . BD, USR, PWD);
+            $this->conn = new \PDO('mysql:host=' . $_ENV['DB_HOSTNAME'] . ';port=' . $_ENV['DB_PORT'] . ';dbname=' . $_ENV['DB_NAME'], $_ENV['DB_USER'], $_ENV['DB_PASSWORD']);
         } catch (Exception $ex) {
             print_r("Erro ao conectar com o Banco de Dados. " . $ex->getMessage());
         }

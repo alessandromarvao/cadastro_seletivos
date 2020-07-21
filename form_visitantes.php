@@ -1,5 +1,6 @@
 <?php
 include_once "views/default/header.php";
+include_once 'bootstrap.php';
 
 use Controller\Classes\SessionController;
 use Model\Bancos;
@@ -16,7 +17,7 @@ use Model\Escolas;
     </div>
     <hr />
     <div class="page">
-        <form method="POST" action="/cadastro_seletivos/controller/Cadastro/fiscal.php">
+        <form method="POST" action="controller/Cadastro/fiscal.php">
             <div class="form-group">
                 <input type='hidden' name='inputUsuario' class='form-control' id='inputUsuario' autocomplete='off' value="visitante" autocomplete="off" required>
             </div>
@@ -136,7 +137,7 @@ use Model\Escolas;
             </div>
             <br>
             <button type="submit" class="btn btn-success btn-large">Enviar</button>
-            <a href="/cadastro_seletivos/index.php" class="btn btn-warning btn-large">Cancelar</a>
+            <a href="index.php" class="btn btn-warning btn-large">Cancelar</a>
         </form>
     </div>
 </div>

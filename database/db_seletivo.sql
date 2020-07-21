@@ -2,7 +2,7 @@
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
 -- Schema db_seletivo
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `db_seletivo`.`contas` (
   `tipo` VARCHAR(45) NULL,
   `operacao` VARCHAR(45) NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_contas_bancos1_idx` (`id_bancos` ASC),
+  INDEX `fk_contas_bancos1_idx` (`id_bancos` ASC) VISIBLE,
   CONSTRAINT `fk_contas_bancos1`
     FOREIGN KEY (`id_bancos`)
     REFERENCES `db_seletivo`.`bancos` (`id`)
@@ -76,6 +76,7 @@ CREATE TABLE IF NOT EXISTS `db_seletivo`.`fiscais` (
   `id_escolas` INT NOT NULL,
   `id_contas` INT NOT NULL,
   `id_enderecos` INT NOT NULL,
+  `pis` VARCHAR(45) NULL,
   `cpf` VARCHAR(45) NOT NULL,
   `matricula` VARCHAR(45) NULL,
   `nome` VARCHAR(45) NULL,
@@ -86,9 +87,9 @@ CREATE TABLE IF NOT EXISTS `db_seletivo`.`fiscais` (
   `email` VARCHAR(45) NULL,
   `created_at` DATETIME NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_fiscais_escolas_idx` (`id_escolas` ASC),
-  INDEX `fk_fiscais_contas1_idx` (`id_contas` ASC),
-  INDEX `fk_fiscais_enderecos1_idx` (`id_enderecos` ASC),
+  INDEX `fk_fiscais_escolas_idx` (`id_escolas` ASC) VISIBLE,
+  INDEX `fk_fiscais_contas1_idx` (`id_contas` ASC) VISIBLE,
+  INDEX `fk_fiscais_enderecos1_idx` (`id_enderecos` ASC) VISIBLE,
   CONSTRAINT `fk_fiscais_escolas`
     FOREIGN KEY (`id_escolas`)
     REFERENCES `db_seletivo`.`escolas` (`id`)

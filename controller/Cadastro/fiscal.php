@@ -1,8 +1,9 @@
 <?php
+
 include_once "../../bootstrap.php";
 
 use Controller\Classes\SessionController; 
-use Model\Conexao;
+use Database\Conexao;
 Use Model\Contas;
 Use Model\Enderecos;
 Use Model\Fiscais;
@@ -43,13 +44,14 @@ try {
     
     //Recupera o ID da conta
     $conta = Contas::getLastId();
+
     //Recupera o ID do endereço
     $endereco = Enderecos::getLastId();
 
     // echo "$escola, $conta, $endereco, $cpf, $matricula, $nome, $rg, $sexo, $orgao, $data_exp, $email";
     if(Fiscais::create($escola, $conta, $endereco, $cpf, $matricula, $nome, $rg, $sexo, $orgao, $data_exp, $email, $pis)){
         SessionController::close();
-        header('Location:/cadastro_seletivos/index.php?m=success');
+        header('Location:/index.php?m=success');
     }
     
     $conexao->commit();

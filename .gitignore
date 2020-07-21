@@ -1,7 +1,8 @@
-/env.php
 /vendor/
+.env
+env.php
 *.mwb.bak
 *.mwb
-/lixo.php
-/lixos.php
+lixo.php
+lixos.php
 form.php.save
