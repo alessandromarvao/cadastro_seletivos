@@ -19,8 +19,8 @@ if($user = $ldap->checkAccess($usr, $pwd)){
     SessionController::set('escolas', Escolas::read());
     
     // echo SessionController::get('user');
-    header('Location:/cadastro_seletivos/form.php');
+    header('Location:/form.php');
 } else {
-    header('Location:/cadastro_seletivos/index.php?m=error');
+    header('Location:/index.php?m=error');
 }
 

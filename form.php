@@ -1,5 +1,7 @@
 <?php
+
 include_once "views/default/header.php";
+include_once 'bootstrap.php';
 
 use Controller\Classes\SessionController;
 use Model\Bancos;
@@ -16,7 +18,7 @@ use Model\Escolas;
     </div>
     <hr />
     <div class="page">
-        <form method="POST" action="/cadastro_seletivos/controller/Cadastro/fiscal.php">
+        <form method="POST" action="controller/Cadastro/fiscal.php">
             <div class="form-group">
                 <label for="inputUsuario"><h2>Matrícula:</h2></label>
                 <input type='text' name='inputUsuario' class='form-control' id='inputUsuario' autocomplete='off' value="<?php echo SessionController::get('user') ?>" autocomplete="off" required>
@@ -56,7 +58,7 @@ use Model\Escolas;
             <h3>Dados Bancários <small>(você não pode utilizar contas bancárias de terceiros) </small></h3>
             <div class="form-group">
                 <label for="inputBanco">Banco:</label>
-                <select name="inputBanco" id="inputBanco">
+                <select name="inputBanco" id="inputBanco" class="form-control">
                 <?php
                 foreach(SessionController::get('bancos') as $row){
                     echo "<option value='" . $row['id'] . "'>" . $row['banco'] . "</option>\n";
@@ -87,7 +89,7 @@ use Model\Escolas;
             <h3>Escola desejada para fiscalização</h3>
             <div class="form-group">
                 <label for="inputPreferencia">Escola de Preferência:</label>
-                <select name="inputPreferencia" id="inputPreferencia">
+                <select name="inputPreferencia" id="inputPreferencia" class="form-control">
                     <?php
                     foreach(SessionController::get('escolas') as $row){
                         echo "<option value='" . $row['id'] . "'>" . $row['escola'] . "</option>\n";
@@ -133,7 +135,7 @@ use Model\Escolas;
             </div>
             <br>
             <button type="submit" class="btn btn-success btn-large">Enviar</button>
-            <a href="/cadastro_seletivos/index.php" class="btn btn-warning btn-large">Cancelar</a>
+            <a href="index.php" class="btn btn-warning btn-large">Cancelar</a>
         </form>
     </div>
 </div>

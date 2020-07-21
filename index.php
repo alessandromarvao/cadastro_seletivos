@@ -15,11 +15,11 @@ echo "\n";
 ?>
 <div class="container">
     <div class="page-title">
-        <h1>Acesso ao Sistema de Cadastro de Fiscais - Seletivo IFMA 2019</h1>
+        <h1>Acesso ao Sistema de Cadastro de Fiscais - Seletivo IFMA 2020</h1>
     </div>
     <hr />
     <div class="page">
-        <form method="POST" action="/cadastro_seletivos/controller/Acessos/login.php" class="form-left">
+        <form method="POST" action="controller/Acessos/login.php" class="form-left">
             <div class="form-group">
                 <label for="inputUsuario"><h2>Usuário:</h2></label>
                 <input type="text" name="inputUsuario" class="form-control" id="inputUsuario" autocomplete="off" placeholder="Digite sua matrícula do SUAP">
